@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two Months 🌻</title>
+  <meta name="description" content="Two months of you 🌻" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fffaf0;
+      --ink: #3c3028;
+      --muted: #806f63;
+      --accent: #d99b38;
+      --pink: #e8b4ad;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+    .sun {
+      position: fixed;
+      font-size: 1.35rem;
+      opacity: .55;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+      z-index: 0;
+    }
+    .s1 { left: 7%; top: 12%; }
+    .s2 { right: 8%; top: 34%; animation-delay: 1.4s; }
+    .s3 { left: 10%; bottom: 13%; animation-delay: 2.2s; }
+    .s4 { right: 12%; bottom: 8%; animation-delay: .7s; }
+    @keyframes float { 50% { transform: translateY(-9px) rotate(7deg); } }
+
+    main { position: relative; z-index: 1; }
+    section {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 22px;
+    }
+    .hero {
+      text-align: center;
+      max-width: 700px;
+      animation: rise .9s ease both;
+    }
+    .tiny { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    h1 {
+      font-family: Caveat, cursive;
+      font-size: clamp(4rem, 15vw, 8rem);
+      line-height: .8;
+      margin: 22px 0 28px;
+      font-weight: 600;
+    }
+    .hero p {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 480px;
+      margin: auto;
+    }
+    button {
+      margin-top: 34px;
+      border: 0;
+      background: var(--ink);
+      color: white;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font: 500 14px "DM Sans", sans-serif;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 8px 24px rgba(60,48,40,.12);
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(60,48,40,.18); }
+
+    .memory {
+      gap: clamp(35px, 7vw, 90px);
+      max-width: 1100px;
+      margin: auto;
+      width: 100%;
+    }
+    .memory:nth-of-type(even) { flex-direction: row-reverse; }
+    .photo-wrap {
+      width: min(430px, 88vw);
+      flex: 0 0 auto;
+      position: relative;
+    }
+    .photo {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 22px 55px rgba(70,48,35,.18);
+      transform: rotate(-2deg);
+    }
+    .memory:nth-of-type(even) .photo { transform: rotate(2deg); }
+    .tape {
+      position: absolute;
+      width: 90px;
+      height: 26px;
+      background: rgba(244, 211, 164, .7);
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      z-index: 2;
+    }
+    .copy { max-width: 450px; }
+    .number {
+      font-family: Caveat, cursive;
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-family: Caveat, cursive;
+      font-size: clamp(2.6rem, 7vw, 4.2rem);
+      line-height: .95;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+    .copy p {
+      font-size: clamp(1rem, 2.3vw, 1.12rem);
+      line-height: 1.85;
+      color: #66564c;
+      margin: 0;
+    }
+    .final {
+      text-align: center;
+      max-width: 720px;
+    }
+    .final h2 { font-size: clamp(3.2rem, 9vw, 5.8rem); }
+    .final .heart { font-size: 2rem; margin: 10px 0 24px; }
+    .final p {
+      line-height: 1.9;
+      color: #66564c;
+      font-size: 1.08rem;
+    }
+    .final .last {
+      margin-top: 30px;
+      font-family: Caveat, cursive;
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      line-height: 1.15;
+      color: var(--ink);
+    }
+    .final .touchwood {
+      font-family: "DM Sans", sans-serif;
+      font-size: .82em;
+      color: var(--muted);
+    }
+    .fade {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .fade.show { opacity: 1; transform: translateY(0); }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 760px) {
+      section { min-height: auto; padding: 90px 24px; }
+      .memory, .memory:nth-of-type(even) { flex-direction: column; }
+      .copy { text-align: center; }
+      .photo-wrap { width: min(380px, 88vw); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sun s1">🌻</div><div class="sun s2">🌻</div>
+  <div class="sun s3">🌻</div><div class="sun s4">🌻</div>
+
+  <main>
+    <section>
+      <div class="hero">
+        <div class="tiny">a tiny something for you</div>
+        <h1>Two months.</h1>
+        <p>Two months since I met you… and somehow, it already feels like there are so many little moments worth keeping.</p>
+        <button onclick="document.getElementById('pic1').scrollIntoView({behavior:'smooth'})">okayyy, show me →</button>
+      </div>
+    </section>
+
+    <section class="memory fade" id="pic1">
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <img class="photo" src="/photos/pic1.jpeg" alt="Our first photo together">
+      </div>
+      <div class="copy">
+        <div class="number">01 / the beginning</div>
+        <h2>Totallyyy awkwarddd.</h2>
+        <p>
+          But full of hope and happiness.<br><br>
+          Even after 2 months, you still make me nervous when you walk into the room.<br>
+          Those butterflies… they come alive when I’m next to you! 🦋
+        </p>
+      </div>
+    </section>
+
+    <section class="memory fade" id="pic2">
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <img class="photo" src="/photos/pic2.jpeg" alt="Our soft launch photo">
+      </div>
+      <div class="copy">
+        <div class="number">02 / the soft launch</div>
+        <h2>The soft launch shoot.</h2>
+        <p>
+          I still remember how scared I was to ask you for this.<br><br>
+          Funny how something that made me so nervous then is now one of my favourite memories. ❤️
+        </p>
+      </div>
+    </section>
+
+    <section class="memory fade" id="pic3">
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <img class="photo" src="/photos/pic3.jpeg" alt="A photo from the launch">
+      </div>
+      <div class="copy">
+        <div class="number">03 / caught looking</div>
+        <h2>The proper “hide your face” for the launch.</h2>
+        <p>
+          BUT! I still remember trying to catch a glimpse of you, and that literally shows up in the way I’m looking at you here.<br><br>
+          Little did I know I would have a new favourite person to look at. ❤️
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="final fade">
+        <div class="tiny">and finally…</div>
+        <h2>Thanks for the 2 months of you! ❤️</h2>
+        <div class="heart">🌻</div>
+        <p>
+          You literally are the brightest light, the way my eyes shine and turn towards you like a sunflower when you are around.
+        </p>
+        <div class="last">
+          Here’s to all the little moments still waiting for us.<br>
+          <span class="touchwood">(Touchwood 🧿 and hopefullyyy many, many more… hehe)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const items = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.16 });
+    items.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
